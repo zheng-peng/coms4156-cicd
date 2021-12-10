@@ -17,7 +17,7 @@ jobs:
         run: pip install flake8
       - name: Generate flake8 bug report
         run: |
-          flake8 ./ bugs.txt --output-file test-reports
+          flake8 --output-file=bugs.txt
       - name: Run flake8
         uses: suo/flake8-github-action@releases/v1
         with:
