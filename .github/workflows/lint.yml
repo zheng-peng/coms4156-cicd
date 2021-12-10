@@ -1,9 +1,6 @@
 name: Lint
 
-on:
-  push:
-    paths:
-      - '*.py'
+on: [push, pull_request]
 
 jobs:
   flake8_py3:
@@ -24,3 +21,6 @@ jobs:
           checkName: 'flake8_py3'   # NOTE: this needs to be the same as the job name
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate flake8 bug report
+        run: |
+          flake8 >> bugs.txt
