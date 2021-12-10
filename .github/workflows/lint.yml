@@ -23,5 +23,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate flake8 bug report
         run: |
-          python -m flake8 --output-file=bugs.txt
+          pip install flake8-html
+          flake8 --format=html --htmldir=flake-report
+
       
