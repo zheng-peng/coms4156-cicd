@@ -23,5 +23,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate flake8 bug report
         run: |
-          flake8 >> bugs.txt
+          python -m flake8 >> bugs.txt
         shell: bash
