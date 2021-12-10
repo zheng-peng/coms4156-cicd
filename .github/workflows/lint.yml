@@ -24,3 +24,4 @@ jobs:
       - name: Generate flake8 bug report
         run: |
           flake8 >> bugs.txt
+        shell: bash
