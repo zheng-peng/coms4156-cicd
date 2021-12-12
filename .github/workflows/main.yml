@@ -41,7 +41,7 @@ jobs:
 
       - name: Run flake8
         run: |
-          flake8 . > bugs.txt
+          flake8 --format=html --htmldir=flake-report --exit-zero
           ls
       
       - name: Commit files
